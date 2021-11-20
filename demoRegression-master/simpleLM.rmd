@@ -22,7 +22,7 @@ knitr::opts_chunk$set(echo = TRUE)
 bears <- read.csv(file="BEARS.csv",header = TRUE)
 ```
   
-
+After reading through BEARS data, it is evident that we will need a numerical~numerical helper file because there are only integers or numerical data included. Sex was even altered to become either the integer 1 or 2.
   
 ## Model LENGTH ~ NECK  this is an example  
 
@@ -33,7 +33,7 @@ abline(simp)
 summary.lm(simp)
 ```
   
-
+Our plot illustrates a positive linear correlation as well as a general estimation of standard deviations. Our R Console includes the residual standard error and the adjusted r-squared to gauge the accuracy of the model. Will need to compare this model with other models possible from the data.
   
 ## now predict the length of a bear who has a neck of 17, 22 and 26
 
