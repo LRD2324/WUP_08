@@ -1,9 +1,7 @@
 ---
 title: "simpleRegress"
 author: "Logan DeHay"
-date: "Fall 2021"
-output: html_document
----
+
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -14,7 +12,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 bears <- read.csv(file="BEARS.csv",header = TRUE)
 ```
+  
 
+  
 ## Model LENGTH ~ NECK  this is an example  
 
 ```{r}
@@ -23,7 +23,9 @@ plot(LENGTH~NECK,data=bears)
 abline(simp)
 summary.lm(simp)
 ```
+  
 
+  
 ## now predict the length of a bear who has a neck of 17, 22 and 26
 
 
@@ -33,4 +35,64 @@ predict(simp,new)
 predict(simp,new,se.fit=TRUE)
 ```
 ## Surely there is another variable that can better predict LENGTH than NECK. Find one and compare its performance to that of neck by it value of Adjusted-Rsquared (bigger is better).
+  
+# AGE ~ LENGTH Model
+```{r}
+simp <- lm(LENGTH~AGE,data=bears)
+plot(LENGTH~AGE,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+  
+# CHEST ~ LENGTH Model
+```{r}
+simp <- lm(LENGTH~CHEST,data=bears)
+plot(LENGTH~CHEST,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+# WIEGHT ~ LENGTH Model
+  
+```{r}
+simp <- lm(LENGTH~WEIGHT,data=bears)
+plot(LENGTH~WEIGHT,data=bears)
+abline(simp)
+summary.lm(simp)
+```
 
+# HEADWIDTH ~ LENGTH PLOT
+
+```{r}
+simp <- lm(LENGTH~HEADWTH,data=bears)
+plot(LENGTH~HEADWTH,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+# HEADLENGTH ~ LENGTH Model
+
+```{r}
+simp <- lm(LENGTH~HEADLEN,data=bears)
+plot(LENGTH~HEADLEN,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+# MONTH ~ LENGTH Model
+
+```{r}
+simp <- lm(LENGTH~MONTH,data=bears)
+plot(LENGTH~MONTH,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+# SEX ~ LENGTH Model
+```{r}
+simp <- lm(LENGTH~SEX,data=bears)
+plot(LENGTH~SEX,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+
+# NECK Squared
