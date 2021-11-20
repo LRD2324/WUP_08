@@ -104,4 +104,15 @@ abline(simp)
 summary.lm(simp)
 ```
 
-# NECK Squared
+# NECK Squared + NECK ~ LENGTH Model
+```{r}
+simp <- lm(LENGTH~I(NECK**2)+NECK,data=bears)
+plot(LENGTH~I(NECK**2)+NECK,data=bears)
+abline(simp)
+summary.lm(simp)
+```
+  
+# Discussion and Conclusion
+  
+After compiling all of the possible models together, it is trivial to compare the adjusted r-squared values to determine the accuracy of each of the models. Our best model determined by our adjusted r-squared value an residual standard error was the model predicting  LENGTH based on the HEADLENGTH data. This illustrated the highest adjusted r-squared value of 0.843 and logically, the higher correlation between the two does make the most sense as both vaariables are measures of length. After this, we adjusted our original LENGTH~NECK model and created a Neck squared + NECK model. However, this had little to no effect on the value of our adjusted r-squared and as a result no effect on the accuracy of the model seemingly.
+  
