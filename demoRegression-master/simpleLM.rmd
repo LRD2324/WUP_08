@@ -52,6 +52,7 @@ plot(LENGTH~AGE,data=bears)
 abline(simp)
 summary.lm(simp)
 ```
+  This model displays lesser accuracy compared to the NECK model. The adjusted r-squared value is smaller and plot illustrates greater variance.
   
 # CHEST ~ LENGTH Model
 ```{r}
@@ -60,6 +61,9 @@ plot(LENGTH~CHEST,data=bears)
 abline(simp)
 summary.lm(simp)
 ```
+  
+This model has improved compared to our beginning model. The value of 0.7869 barely is better than our adjusted R-squared value of 0.7476. This is the most accurate model yet. Our p-value is extremely small indicating our data does display some sort of correlation.
+  
 # WIEGHT ~ LENGTH Model
   
 ```{r}
@@ -68,7 +72,9 @@ plot(LENGTH~WEIGHT,data=bears)
 abline(simp)
 summary.lm(simp)
 ```
-
+  
+Our adjusted R-squared value in this model is lesser than all other models except for age. This is the 3rd most accurate model out of 4.
+  
 # HEADWIDTH ~ LENGTH PLOT
 
 ```{r}
@@ -77,7 +83,9 @@ plot(LENGTH~HEADWTH,data=bears)
 abline(simp)
 summary.lm(simp)
 ```
-
+  
+This model is extremely inaccurate and our p-value has decreased compared to other models. This is understandable as it seems dubious that the width of a bear's head has any impact on the length of it as a whole.
+  
 # HEADLENGTH ~ LENGTH Model
 
 ```{r}
@@ -86,7 +94,9 @@ plot(LENGTH~HEADLEN,data=bears)
 abline(simp)
 summary.lm(simp)
 ```
-
+  
+This is our greatest adjusted R-squared value (0.8434) and it stands to be the most improved model of all. This indicates that there is a greater correlation between headlength and length than length to any other variable. This makes sense because headlength is going to have a direct effect on the length of a bear.
+  
 # MONTH ~ LENGTH Model
 
 ```{r}
@@ -95,7 +105,9 @@ plot(LENGTH~MONTH,data=bears)
 abline(simp)
 summary.lm(simp)
 ```
-
+  
+Our smallest and worst adjusted R-squared value yet (-0.01153), and it can be confirmed according to our large p-value that month has no effect on the length of bears.
+  
 # SEX ~ LENGTH Model
 ```{r}
 simp <- lm(LENGTH~SEX,data=bears)
@@ -103,7 +115,9 @@ plot(LENGTH~SEX,data=bears)
 abline(simp)
 summary.lm(simp)
 ```
-
+  
+Similarly to age, our measure of accuracy is extremely small at -0.008373, making this model the least improved model from our beginning model LENTH ~ NECK.
+  
 # NECK Squared + NECK ~ LENGTH Model
 ```{r}
 simp <- lm(LENGTH~I(NECK**2)+NECK,data=bears)
@@ -112,6 +126,8 @@ abline(simp)
 summary.lm(simp)
 ```
   
+This was an extra calculation. It is an attempt to directly improve the NECK ~ LENGTH model that we started with. The alterations had little to no effect on the accuracy of the model when comparing 0.7465 to 0.7476.  
+
 # Discussion and Conclusion
   
 After compiling all of the possible models together, it is trivial to compare the adjusted r-squared values to determine the accuracy of each of the models. Our best model determined by our adjusted r-squared value an residual standard error was the model predicting  LENGTH based on the HEADLENGTH data. This illustrated the highest adjusted r-squared value of 0.843 and logically, the higher correlation between the two does make the most sense as both vaariables are measures of length. After this, we adjusted our original LENGTH~NECK model and created a Neck squared + NECK model. However, this had little to no effect on the value of our adjusted r-squared and as a result no effect on the accuracy of the model seemingly.
