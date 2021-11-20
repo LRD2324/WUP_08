@@ -1,7 +1,16 @@
 ---
 title: "simpleRegress"
 author: "Logan DeHay"
-
+date: "`r Sys.Date()`"
+output:
+  pdf_document:
+    toc: yes
+    toc_depth: '5'
+  html_document:
+    number_sections: yes
+    toc: yes
+    toc_depth: 5
+---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
